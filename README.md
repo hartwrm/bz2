@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app for you to track which companies you are interested in investing in or just following.
 
-Things you may want to cover:
+It uses rail on the back end and will contain basic data regarding opening and closing share price, industry, and user notes.
 
-* Ruby version
+Ruby on rails for the API/back end and POSTGRESQL for the database.
 
-* System dependencies
+Users will be able to add companies, update their notes, and remove them from their tracking list.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Api will be deployed on Heroku and be consumed by a React.JS front end.
