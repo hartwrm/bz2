@@ -1,0 +1,937 @@
+  [1m[35m (408.0ms)[0m  [1m[35mCREATE DATABASE "biztrk_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (297.0ms)[0m  [1m[35mCREATE DATABASE "biztrk_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1301990701817916705)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCompanies (20190817035525)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "companies" ("id" bigserial primary key, "name" character varying, "industry" character varying, "open" float, "close" float, "notes" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190817035525"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-17 03:58:05.529980"], ["updated_at", "2019-08-17 03:58:05.529980"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1301990701817916705)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (2.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Lueilwitz-Schamberger"], ["industry", "Philanthropy"], ["open", 44.37], ["close", 12.88], ["notes", "morph viral metrics"], ["created_at", "2019-08-17 04:05:29.008680"], ["updated_at", "2019-08-17 04:05:29.008680"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Stiedemann Group"], ["industry", "Legislative Office"], ["open", 71.19], ["close", 12.9], ["notes", "unleash synergistic eyeballs"], ["created_at", "2019-08-17 04:05:29.016606"], ["updated_at", "2019-08-17 04:05:29.016606"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Bauch-Brown"], ["industry", "Logistics and Supply Chain"], ["open", 15.44], ["close", 85.45], ["notes", "monetize next-generation models"], ["created_at", "2019-08-17 04:05:29.020565"], ["updated_at", "2019-08-17 04:05:29.020565"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Effertz, Smith and Bosco"], ["industry", "Printing"], ["open", 72.61], ["close", 32.16], ["notes", "unleash front-end applications"], ["created_at", "2019-08-17 04:05:29.024649"], ["updated_at", "2019-08-17 04:05:29.024649"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Johnston-Hyatt"], ["industry", "Supermarkets"], ["open", 53.23], ["close", 24.73], ["notes", "optimize out-of-the-box systems"], ["created_at", "2019-08-17 04:05:29.028754"], ["updated_at", "2019-08-17 04:05:29.028754"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Schowalter Inc"], ["industry", "Sports"], ["open", 51.53], ["close", 88.52], ["notes", "exploit holistic systems"], ["created_at", "2019-08-17 04:05:29.032842"], ["updated_at", "2019-08-17 04:05:29.032842"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Fahey, King and Yost"], ["industry", "Alternative Dispute Resolution"], ["open", 76.31], ["close", 44.09], ["notes", "transition global markets"], ["created_at", "2019-08-17 04:05:29.036892"], ["updated_at", "2019-08-17 04:05:29.036892"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Muller-White"], ["industry", "Photography"], ["open", 98.26], ["close", 34.51], ["notes", "enhance extensible partnerships"], ["created_at", "2019-08-17 04:05:29.041115"], ["updated_at", "2019-08-17 04:05:29.041115"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Hamill, Ferry and Borer"], ["industry", "Political Organization"], ["open", 60.42], ["close", 30.73], ["notes", "disintermediate out-of-the-box e-markets"], ["created_at", "2019-08-17 04:05:29.045078"], ["updated_at", "2019-08-17 04:05:29.045078"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Murazik Group"], ["industry", "Medical Devices"], ["open", 54.13], ["close", 34.91], ["notes", "reinvent holistic communities"], ["created_at", "2019-08-17 04:05:29.050185"], ["updated_at", "2019-08-17 04:05:29.050185"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/companies" for ::1 at 2019-08-17 00:05:55 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 11.9ms | ActiveRecord: 4.3ms | Allocations: 9010)
+
+
+Started GET "/companies/3" for ::1 at 2019-08-17 00:06:19 -0400
+Processing by CompaniesController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+Completed 200 OK in 20ms (Views: 0.6ms | ActiveRecord: 1.2ms | Allocations: 4632)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 00:11:43 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 21.0ms | ActiveRecord: 1.2ms | Allocations: 2506)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 00:24:08 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (2.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 2.2ms | Allocations: 2603)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 00:24:25 -0400
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 4.6ms | Allocations: 9011)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 00:31:08 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 15.6ms | ActiveRecord: 1.3ms | Allocations: 2615)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 00:31:28 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 2507)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 00:31:35 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 2507)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 00:31:39 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.7ms | Allocations: 2507)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:03:21 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (2.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 6.8ms | ActiveRecord: 2.5ms | Allocations: 2604)
+
+
+Started POST "/companies" for ::1 at 2019-08-17 01:03:50 -0400
+Processing by CompaniesController#create as HTML
+  Parameters: {"company"=>{}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 147)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: company):
+  
+app/controllers/companies_controller.rb:49:in `company_params'
+app/controllers/companies_controller.rb:18:in `create'
+Started GET "/companies" for ::1 at 2019-08-17 01:03:56 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.5ms | Allocations: 2527)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:04:16 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.6ms | Allocations: 2492)
+
+
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/companies" for ::1 at 2019-08-17 01:05:43 -0400
+Processing by CompaniesController#create as HTML
+  Parameters: {"company"=>{}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 140)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: company):
+  
+app/controllers/companies_controller.rb:49:in `company_params'
+app/controllers/companies_controller.rb:18:in `create'
+Started GET "/companies" for ::1 at 2019-08-17 01:07:18 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.7ms | Allocations: 2491)
+
+
+Started POST "/companies" for ::1 at 2019-08-17 01:07:33 -0400
+Processing by CompaniesController#create as HTML
+  Parameters: {"name"=>"Apple", "industry"=>"Tech", "open"=>"154", "close"=>"300", "notes"=>"Buy ", "company"=>{"name"=>"Apple", "industry"=>"Tech", "open"=>"154", "close"=>"300", "notes"=>"Buy "}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+  [1m[36mCompany Create (2.6ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Apple"], ["industry", "Tech"], ["open", 154.0], ["close", 300.0], ["notes", "Buy "], ["created_at", "2019-08-17 05:07:33.741015"], ["updated_at", "2019-08-17 05:07:33.741015"]]
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+Completed 201 Created in 13ms (Views: 1.4ms | ActiveRecord: 3.4ms | Allocations: 2841)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:07:47 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 1.2ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:48:28 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.5ms | ActiveRecord: 1.5ms | Allocations: 2769)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:49:05 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:49:57 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:51:38 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:51:43 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:51:45 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:54:44 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.4ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:54:54 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 01:58:00 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.7ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:01:28 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:07:10 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.3ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:10:00 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.6ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:13:19 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:14:02 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:14:15 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.4ms | Allocations: 2659)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:15:19 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.3ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:16:11 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:19:15 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.3ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:21:25 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:28:55 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.0ms | Allocations: 2769)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:32:06 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:40:25 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 1.1ms | Allocations: 2770)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:41:08 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.6ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:41:32 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.3ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:44:11 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:46:55 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:48:55 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 1.1ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:48:58 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 1.4ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:52:52 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:54:04 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.6ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:55:10 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:55:53 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 02:57:30 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.9ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:02:10 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:02:25 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:02:54 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:07:05 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.7ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:07:41 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 1.1ms | Allocations: 2657)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:07:51 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.7ms | Allocations: 2657)
+
+
+Started POST "/companies" for ::1 at 2019-08-17 03:08:27 -0400
+Processing by CompaniesController#create as HTML
+  Parameters: {"name"=>"GA", "industry"=>"tech and education", "open"=>"19.99", "close"=>"25.55", "notes"=>"a lot of work", "company"=>{"name"=>"GA", "industry"=>"tech and education", "open"=>"19.99", "close"=>"25.55", "notes"=>"a lot of work"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+  [1m[36mCompany Create (3.8ms)[0m  [1m[32mINSERT INTO "companies" ("name", "industry", "open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "GA"], ["industry", "tech and education"], ["open", 19.99], ["close", 25.55], ["notes", "a lot of work"], ["created_at", "2019-08-17 07:08:27.083834"], ["updated_at", "2019-08-17 07:08:27.083834"]]
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+Completed 201 Created in 71ms (Views: 1.8ms | ActiveRecord: 5.9ms | Allocations: 2555)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:08:38 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 2821)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:08:51 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 2821)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:10:11 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.5ms | Allocations: 2821)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:10:56 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 2821)
+
+
+Started DELETE "/companies/12" for ::1 at 2019-08-17 03:11:00 -0400
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"12", "company"=>{}}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+  [1m[36mCompany Destroy (2.3ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+Completed 204 No Content in 43ms (ActiveRecord: 3.6ms | Allocations: 6117)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:11:16 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.5ms | Allocations: 2657)
+
+
+Started PUT "/companies/11" for ::1 at 2019-08-17 03:11:22 -0400
+Processing by CompaniesController#update as HTML
+  Parameters: {"name"=>"Apple", "industry"=>"Tech", "open"=>154, "close"=>300, "notes"=>"SELL", "id"=>"11", "company"=>{"id"=>"11", "name"=>"Apple", "industry"=>"Tech", "open"=>154, "close"=>300, "notes"=>"SELL"}}
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:29:in `update'
+  [1m[36mCompany Update (1.1ms)[0m  [1m[33mUPDATE "companies" SET "notes" = $1, "updated_at" = $2 WHERE "companies"."id" = $3[0m  [["notes", "SELL"], ["updated_at", "2019-08-17 07:11:22.928876"], ["id", 11]]
+  ↳ app/controllers/companies_controller.rb:29:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:29:in `update'
+Completed 200 OK in 19ms (Views: 1.2ms | ActiveRecord: 2.4ms | Allocations: 3116)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:11:22 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 2658)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:12:40 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 16.3ms | ActiveRecord: 12.6ms | Allocations: 8720)
+
+
+Started POST "/companies" for ::1 at 2019-08-17 03:13:04 -0400
+Processing by CompaniesController#create as HTML
+  Parameters: {"name"=>"Apple", "industry"=>"tech", "open"=>"5000", "close"=>"500000", "notes"=>"byebyebye", "company"=>{"name"=>"Apple", "industry"=>"tech", "open"=>"5000", "close"=>"500000", "notes"=>"byebyebye"}}
+[31mUnpermitted parameters: :name, :industry[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+  [1m[36mCompany Create (1.4ms)[0m  [1m[32mINSERT INTO "companies" ("open", "close", "notes", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["open", 5000.0], ["close", 500000.0], ["notes", "byebyebye"], ["created_at", "2019-08-17 07:13:04.909660"], ["updated_at", "2019-08-17 07:13:04.909660"]]
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:20:in `create'
+Completed 201 Created in 14ms (Views: 1.9ms | ActiveRecord: 3.1ms | Allocations: 2575)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:13:11 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 2805)
+
+
+Started PUT "/companies/13" for ::1 at 2019-08-17 03:13:29 -0400
+Processing by CompaniesController#update as HTML
+  Parameters: {"name"=>"Apple", "industry"=>"Tech", "open"=>5000, "close"=>500000, "notes"=>"byebyebye", "id"=>"13", "company"=>{"id"=>"13", "name"=>"Apple", "industry"=>"Tech", "open"=>5000, "close"=>500000, "notes"=>"byebyebye"}}
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+[31mUnpermitted parameters: :id, :name, :industry[0m
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1135)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:13:29 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.4ms | Allocations: 2805)
+
+
+Started DELETE "/companies/13" for ::1 at 2019-08-17 03:13:47 -0400
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"13", "company"=>{}}
+  [1m[36mCompany Load (0.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+  [1m[36mCompany Destroy (0.3ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 13]]
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+Completed 204 No Content in 14ms (ActiveRecord: 5.2ms | Allocations: 7356)
+
+
+Started DELETE "/companies/11" for ::1 at 2019-08-17 03:13:49 -0400
+Processing by CompaniesController#destroy as HTML
+  Parameters: {"id"=>"11", "company"=>{}}
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+  [1m[36mCompany Destroy (0.4ms)[0m  [1m[31mDELETE FROM "companies" WHERE "companies"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:38:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 2.4ms | Allocations: 2267)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 03:13:52 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.8ms | Allocations: 2505)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 08:52:14 -0400
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (2.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 22ms (Views: 10.9ms | ActiveRecord: 9.2ms | Allocations: 9011)
+
+
+Started PUT "/companies/1" for ::1 at 2019-08-17 08:52:27 -0400
+Processing by CompaniesController#update as HTML
+  Parameters: {"name"=>"Lueilwitz-Schamberger", "industry"=>"Philanthropy", "open"=>"42.78", "close"=>12.88, "notes"=>"morph viral metrics", "id"=>"1", "company"=>{"id"=>"1", "name"=>"Lueilwitz-Schamberger", "industry"=>"Philanthropy", "open"=>"42.78", "close"=>12.88, "notes"=>"morph viral metrics"}}
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+[31mUnpermitted parameter: :id[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/companies_controller.rb:29:in `update'
+  [1m[36mCompany Update (1.6ms)[0m  [1m[33mUPDATE "companies" SET "open" = $1, "updated_at" = $2 WHERE "companies"."id" = $3[0m  [["open", 42.78], ["updated_at", "2019-08-17 12:52:27.370374"], ["id", 1]]
+  ↳ app/controllers/companies_controller.rb:29:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/companies_controller.rb:29:in `update'
+Completed 200 OK in 33ms (Views: 0.7ms | ActiveRecord: 3.7ms | Allocations: 7109)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 08:52:27 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 08:58:04 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 31ms (Views: 25.0ms | ActiveRecord: 1.2ms | Allocations: 2507)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 08:58:19 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 1.5ms | Allocations: 2507)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 08:59:16 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.5ms | Allocations: 2507)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 08:59:24 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.4ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:04:31 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:05:01 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.7ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:07:58 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 70ms (Views: 69.1ms | ActiveRecord: 0.7ms | Allocations: 2494)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:10:10 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.6ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:15:07 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.4ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.4ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:19:58 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.9ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.9ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:20:16 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (2.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 2.8ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:20:27 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:20:37 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:21:05 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 1.3ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:24:20 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.3ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:24:26 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:24:48 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:25:02 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.6ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:26:11 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.3ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:26:33 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.6ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:26:53 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:27:04 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 9.7ms | ActiveRecord: 1.7ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:27:19 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:28:02 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.7ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:29:12 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.8ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.8ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:29:47 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 2493)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:30:01 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:30:37 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:31:46 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:32:31 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:33:24 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:33:41 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:33:48 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (1.0ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 1.0ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:33:52 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.6ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.6ms | Allocations: 2492)
+
+
+Started GET "/companies" for ::1 at 2019-08-17 09:34:22 -0400
+Processing by CompaniesController#index as */*
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.3ms | Allocations: 2492)
+
+
+Started GET "/" for ::1 at 2019-08-17 09:39:22 -0400
+Processing by WelcomeController#index as HTML
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.0ms | Allocations: 36784)
+
+
+  
+NoMethodError (undefined method `redner' for #<WelcomeController:0x00007f9b41f970c0>
+Did you mean?  render):
+  
+app/controllers/welcome_controller.rb:3:in `index'
+Started GET "/favicon.ico" for ::1 at 2019-08-17 09:39:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (6.0.0) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for ::1 at 2019-08-17 09:39:33 -0400
+Processing by WelcomeController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 144)
+
+
